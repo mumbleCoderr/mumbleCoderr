@@ -46,14 +46,6 @@
 
 ###
 
-<div style="display: flex; padding: 0; margin: 0;">
-  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHplZG13ZTBsOTF1ODN6bjQ4NjU2Zjlkdzl3ZGxyaW95eWRhamxieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif" style="width: 20%; margin: 0; padding: 0;" />
-  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHplZG13ZTBsOTF1ODN6bjQ4NjU2Zjlkdzl3ZGxyaW95eWRhamxieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif" style="width: 20%; margin: 0; padding: 0;" />
-  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHplZG13ZTBsOTF1ODN6bjQ4NjU2Zjlkdzl3ZGxyaW95eWRhamxieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif" style="width: 20%; margin: 0; padding: 0;" />
-  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHplZG13ZTBsOTF1ODN6bjQ4NjU2Zjlkdzl3ZGxyaW95eWRhamxieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif" style="width: 20%; margin: 0; padding: 0;" />
-  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHplZG13ZTBsOTF1ODN6bjQ4NjU2Zjlkdzl3ZGxyaW95eWRhamxieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif" style="width: 20%; margin: 0; padding: 0;" />
-</div>
-
 
 
 ###
