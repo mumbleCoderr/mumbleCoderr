@@ -1,4 +1,10 @@
-<h2 align="left">Hi 👋! My name is Mateusz and I'm a 22 years old backend developer from Poland</h2>
+<h2 align="left">
+  👋 Hi there! I'm Mateusz<br><br>
+  🎓 I'm a 22-year-old student at the <strong>Polish-Japanese Academy of Information Technology</strong> in Poland 🇵🇱<br><br>
+  💻 I'm a <strong>Backend Developer</strong>, and I also build <strong>Android applications using Kotlin</strong> 📱<br><br>
+  ⚽ I'm passionate about <strong>sports</strong>, especially <strong>football</strong> and <strong>weightlifting</strong> 🏋️‍♂️
+</h2>
+
 
 ###
 
