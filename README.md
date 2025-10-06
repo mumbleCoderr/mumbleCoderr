@@ -2,7 +2,7 @@
   👋 Hi there! I'm Mateusz from Poland 🇵🇱<br><br>
   🎓 I'm a 23-year-old student at the <strong>Polish-Japanese Academy of Information Technology</strong><br><br>
   💻 I'm a <strong>Backend Developer</strong>, and I also build <strong>Android applications using Kotlin</strong> <br><br>
-  ⚽ I'm passionate about <strong>sports</strong>, especially <strong>football</strong> and <strong>bodybuilding</strong> 
+  ⚽ I'm passionate about <strong>sports</strong>, especially <strong>football</strong> and <strong>bodybuilding</strong> <br><br>
   📧 E-mail contact: biernatmdev@gmail.com
 </h2>
 
