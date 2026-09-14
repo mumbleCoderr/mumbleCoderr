@@ -1,66 +1,65 @@
-<h2 align="left">
-  👋 Hi there! I'm Mateusz from Poland 🇵🇱<br><br>
-  🎓 I'm a recent CS graduate (B.Eng.) from the <strong>Polish-Japanese Academy of Information Technology</strong><br><br>
-  💻 I'm a <strong>Backend Developer</strong>, and I also build <strong>Android applications using Kotlin</strong> <br><br>
-  ⚽ I'm passionate about <strong>sports</strong>, especially <strong>football</strong> and <strong>bodybuilding</strong> <br><br>
-  📧 E-mail contact: biernatmdev@gmail.com
-</h2>
+## mumbleCoderr
 
+### Experience
 
-###
+I'm Mateusz - a developer focused on mobile and backend. I build things end to end: shared Kotlin Multiplatform clients, serverless backends, AI content pipelines. I finished a Computer Science B.Eng. at the Polish-Japanese Academy of Information Technology and I'm starting a Master's in Innovation Design and Artificial Intelligence at WSB Merito. In 2025 I spent 3 months as an AEM Developer Intern at Sii Polska, rebuilding their careers page from scratch in a 4-person team.
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mumbleCoderr&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=mumbleCoderr&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
-</div>
+### Tech stack
 
-###
+Mostly Kotlin - Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Clean Architecture, MVVM, Room, Koin, Ktor. On the backend Java with Spring Boot, Node.js on Cloud Functions and Python. Firebase for most of my production work (Firestore, Auth, Functions, FCM, App Check), plus React, Docker, SQL and a lot of LLM plumbing - structured outputs, prompt engineering, cost-aware pipelines.
 
-<img align="right" height="150" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHplZG13ZTBsOTF1ODN6bjQ4NjU2Zjlkdzl3ZGxyaW95eWRhamxieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif"  />
+### Projects
 
-###
+**Right** - social quiz app for Android and iOS, one Kotlin Multiplatform codebase. [video](https://www.youtube.com/watch?v=RyvzOGbR4K8)
+- ~57k lines of shared Kotlin across ~20 feature modules, 700+ commits, serverless backend with 50+ Cloud Functions
+- server-authoritative anti-cheat: points, streaks and premium status are computed only in transactional Cloud Functions, the client is treated as untrusted
+- custom Firestore content-serving algorithm (Scout + Digger) with constant read cost regardless of collection size, local history filtering and background prefetch
+- offline-first answers stored in Room with sync in batches of up to 200, marked per batch so a mid-batch failure doesn't resend accepted chunks
+- monetization via RevenueCat (subscription + non-consumable + consumable) with a signed webhook, event deduplication and refund clawback; AdMob rewarded ads granted only after RSA signature verification of the SSV callback
+- 12 languages of UI and content, deep links on both platforms, in-app notification center, cosmetics system, ~40 reusable Compose components
+- moderation panel built on a private Discord server (Ed25519-verified interactions) instead of a separate admin app
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="30" alt="java logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="30" alt="spring logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="30" alt="intellij logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" height="30" alt="kotlin logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" height="30" alt="android logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" height="30" alt="androidstudio logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="30" alt="github logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="30" alt="mysql logo"  />
-</div>
+**Right AI pipeline** - the content pipeline that filled the app's question bank. [video](https://www.youtube.com/watch?v=RyvzOGbR4K8)
+- 9 stages with deterministic steps deliberately separated from model steps - anything computable in code costs zero tokens
+- every model call uses structured output with a Pydantic JSON schema, so no stage ever parses free text
+- shipped 5,015 cards in 12 languages from 8,167 raw inputs (98.4% survived cleaning)
+- controlled mutation for false statements: the model swaps exactly one number, date or name and declares what it swapped
+- deterministic quality gates (anti-paraphrase, answer leak, filler) plus an AI judge before any translation is paid for
+- rewritten to Node.js and wired into Cloud Functions as the automoderation path for player-written cards, with daily budget reservation in Realtime Database
 
-###
+**Take or Make** - Android marketplace for service and product listings, my engineering thesis. [repo](https://github.com/mumbleCoderr/Take_or_Make) · [video](https://youtu.be/yacjtEgf6FU)
+- ~12k lines of Kotlin, 15 feature modules and 8 shared modules in a core/features Clean Architecture split
+- domain model separating offer from request and product from service, with category, price unit, item condition and publication status
+- multi-step listing wizard, Firebase Auth with Google sign-in via Credential Manager, Koin + KSP dependency injection
+- ViewModel unit tests with MockK and a custom MainDispatcherRule, plus Compose UI tests
 
-<div align="left">
-  <a href="https://mail.google.com/mail/?view=cm&to=biernatmdev@gmail.com" target="_blank">
-  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo" />
-</a>
-  <a href="https://www.linkedin.com/in/mateusz-biernat-b3273027b/" target="_blank">
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo" />
-</a>
-</div>
+**Job Sniper** - CV generator tailored to a specific job offer
+- pipeline: requirement extraction from the posting, deterministic match scoring, content writing, ATS-friendly PDF render
+- anti-hallucination validator checking every fact in the generated CV against a source-of-truth profile, with a repair round-trip when something isn't covered
+- two cost gates before paid stages, and an LLM provider abstraction with separate parser/writer/repair slots, each with its own model, temperature and rate limit
+- scrapers for justjoin.it and nofluffjobs with deduplication, PDF via Jinja2 + headless Chromium, 43 unit tests running without network or API key
 
-###
+**Fruit Shop** - fullstack online store, my first fullstack project. [repo](https://github.com/mumbleCoderr/FRUIT_SHOP) · [video](https://youtu.be/Wy5izuefwd8)
+- Spring Boot backend with JWT auth (custom filter in the Spring Security chain) and role-based authorization with an admin panel
+- REST API split into auth/products/orders/users controllers over service and repository layers, DTOs at the API boundary
+- React 18 frontend with cart, product details, checkout with delivery address and order history; Dockerfiles for both sides
 
+**Digital Diary** - memory journal with geolocation and voice notes. [repo](https://github.com/mumbleCoderr/DIGITAL_DIARY) · [video](https://youtu.be/_k5QQEMhMmI)
+- memories made of a photo, voice recording, description, mood rating, city and date, stored locally in Room
+- custom audio recorder, last-known-location lookup with reverse geocoding to a city name, Google sign-in via Firebase Auth
 
+**Film Library** - movie and series catalog, my first Kotlin app. [repo](https://github.com/mumbleCoderr/FILM_LIBRARY) · [video](https://youtu.be/CQT7N4gSDBg)
+- sealed class domain model separating a movie (runtime) from a series (episode count)
+- persistence through object serialization, filtering and sorting by title, genre and watched status, cover images handled as byte arrays
 
-###
+... and a few more
 
+### Languages
 
+- Polish - native
+- English - C1
+- Spanish - A2
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mumbleCoderr/mumbleCoderr/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mumbleCoderr/mumbleCoderr/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/mumbleCoderr/mumbleCoderr/output/github-snake.svg" />
-</picture>
+### Contact
+
+[Linkedin](https://www.linkedin.com/in/mateusz-biernat-b3273027b)
