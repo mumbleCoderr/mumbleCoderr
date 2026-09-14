@@ -11,16 +11,16 @@ Mostly Kotlin - Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Cl
 ### Projects
 
 **Right** - social quiz app for Android and iOS, one Kotlin Multiplatform codebase. [video](https://www.youtube.com/watch?v=RyvzOGbR4K8)
-- ~57k lines of shared Kotlin across ~20 feature modules, 700+ commits, serverless backend with 50+ Cloud Functions
+- one shared Kotlin Multiplatform codebase for both platforms, with a serverless Firebase backend
 - server-authoritative anti-cheat: points, streaks and premium status are computed only in transactional Cloud Functions, the client is treated as untrusted
 - custom Firestore content-serving algorithm (Scout + Digger) with constant read cost regardless of collection size, local history filtering and background prefetch
 - offline-first answers stored in Room with sync in batches of up to 200, marked per batch so a mid-batch failure doesn't resend accepted chunks
 - monetization via RevenueCat (subscription + non-consumable + consumable) with a signed webhook, event deduplication and refund clawback; AdMob rewarded ads granted only after RSA signature verification of the SSV callback
-- 12 languages of UI and content, deep links on both platforms, in-app notification center, cosmetics system, ~40 reusable Compose components
+- 12 languages of UI and content, deep links on both platforms, in-app notification center, cosmetics system and my own library of reusable Compose components
 - moderation panel built on a private Discord server (Ed25519-verified interactions) instead of a separate admin app
 
 **Right AI pipeline** - the content pipeline that filled the app's question bank. [video](https://www.youtube.com/watch?v=RyvzOGbR4K8)
-- 9 stages with deterministic steps deliberately separated from model steps - anything computable in code costs zero tokens
+- deterministic steps deliberately separated from model steps - anything computable in code costs zero tokens
 - every model call uses structured output with a Pydantic JSON schema, so no stage ever parses free text
 - shipped 5,015 cards in 12 languages from 8,167 raw inputs (98.4% survived cleaning)
 - controlled mutation for false statements: the model swaps exactly one number, date or name and declares what it swapped
@@ -28,7 +28,7 @@ Mostly Kotlin - Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Cl
 - rewritten to Node.js and wired into Cloud Functions as the automoderation path for player-written cards, with daily budget reservation in Realtime Database
 
 **Take or Make** - Android marketplace for service and product listings, my engineering thesis. [repo](https://github.com/mumbleCoderr/Take_or_Make) · [video](https://youtu.be/yacjtEgf6FU)
-- ~12k lines of Kotlin, 15 feature modules and 8 shared modules in a core/features Clean Architecture split
+- core/features split in the spirit of Clean Architecture, with MVVM on top
 - domain model separating offer from request and product from service, with category, price unit, item condition and publication status
 - multi-step listing wizard, Firebase Auth with Google sign-in via Credential Manager, Koin + KSP dependency injection
 - ViewModel unit tests with MockK and a custom MainDispatcherRule, plus Compose UI tests
@@ -37,7 +37,7 @@ Mostly Kotlin - Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Cl
 - pipeline: requirement extraction from the posting, deterministic match scoring, content writing, ATS-friendly PDF render
 - anti-hallucination validator checking every fact in the generated CV against a source-of-truth profile, with a repair round-trip when something isn't covered
 - two cost gates before paid stages, and an LLM provider abstraction with separate parser/writer/repair slots, each with its own model, temperature and rate limit
-- scrapers for justjoin.it and nofluffjobs with deduplication, PDF via Jinja2 + headless Chromium, 43 unit tests running without network or API key
+- scrapers for justjoin.it and nofluffjobs with deduplication, PDF via Jinja2 + headless Chromium, unit tests covering the whole deterministic part without network or API key
 
 **Fruit Shop** - fullstack online store, my first fullstack project. [repo](https://github.com/mumbleCoderr/FRUIT_SHOP) · [video](https://youtu.be/Wy5izuefwd8)
 - Spring Boot backend with JWT auth (custom filter in the Spring Security chain) and role-based authorization with an admin panel
