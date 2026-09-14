@@ -18,6 +18,7 @@ Mostly Kotlin - Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Cl
 - monetization via RevenueCat (subscription + non-consumable + consumable) with a signed webhook, event deduplication and refund clawback; AdMob rewarded ads granted only after RSA signature verification of the SSV callback
 - 12 languages of UI and content, deep links on both platforms, in-app notification center, cosmetics system and my own library of reusable Compose components
 - moderation panel built on a private Discord server (Ed25519-verified interactions) instead of a separate admin app
+- **Stack:** Kotlin Multiplatform, Compose Multiplatform, Material 3, Clean Architecture, MVVM, Koin, KSP, Room, Coroutines, Flow, Ktor, kotlinx.serialization, Coil, Media3, Firebase (Firestore, Auth, Cloud Functions, Realtime Database, Storage, FCM, App Check), Node.js, RevenueCat, AdMob, Python, Gemini API
 
 **Right AI pipeline** - the content pipeline that filled the app's question bank. [video](https://www.youtube.com/watch?v=RyvzOGbR4K8)
 - deterministic steps deliberately separated from model steps - anything computable in code costs zero tokens
@@ -26,31 +27,40 @@ Mostly Kotlin - Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Cl
 - controlled mutation for false statements: the model swaps exactly one number, date or name and declares what it swapped
 - deterministic quality gates (anti-paraphrase, answer leak, filler) plus an AI judge before any translation is paid for
 - rewritten to Node.js and wired into Cloud Functions as the automoderation path for player-written cards, with daily budget reservation in Realtime Database
+- **Stack:** Python, Pydantic, Gemini API, structured outputs, prompt engineering, Cloud Firestore, Realtime Database, Node.js, Cloud Functions
 
 **Take or Make** - Android marketplace for service and product listings, my engineering thesis. [repo](https://github.com/mumbleCoderr/Take_or_Make) · [video](https://youtu.be/yacjtEgf6FU)
+- two tabs the name comes from: Take browses other people's listings, Make is where you post, edit and delete your own
 - core/features split in the spirit of Clean Architecture, with MVVM on top
 - domain model separating offer from request and product from service, with category, price unit, item condition and publication status
 - multi-step listing wizard, Firebase Auth with Google sign-in via Credential Manager, Koin + KSP dependency injection
+- UiText layer keeping labels as resource references instead of hardcoded strings inside domain models
+- listing photos stored as a field on the listing document in Cloud Firestore, no separate storage layer
 - ViewModel unit tests with MockK and a custom MainDispatcherRule, plus Compose UI tests
+- **Stack:** Kotlin, Jetpack Compose, Material 3, Clean Architecture, MVVM, Koin, KSP, Coroutines, Flow, kotlinx.serialization, Navigation Compose, Coil, Firebase Auth, Cloud Firestore, MockK, Gradle
 
 **Job Sniper** - CV generator tailored to a specific job offer
 - pipeline: requirement extraction from the posting, deterministic match scoring, content writing, ATS-friendly PDF render
 - anti-hallucination validator checking every fact in the generated CV against a source-of-truth profile, with a repair round-trip when something isn't covered
 - two cost gates before paid stages, and an LLM provider abstraction with separate parser/writer/repair slots, each with its own model, temperature and rate limit
 - scrapers for justjoin.it and nofluffjobs with deduplication, PDF via Jinja2 + headless Chromium, unit tests covering the whole deterministic part without network or API key
+- **Stack:** Python, Pydantic, Streamlit, Jinja2, Playwright, SQLite, Gemini API, structured outputs, prompt engineering
 
 **Fruit Shop** - fullstack online store, my first fullstack project. [repo](https://github.com/mumbleCoderr/FRUIT_SHOP) · [video](https://youtu.be/Wy5izuefwd8)
 - Spring Boot backend with JWT auth (custom filter in the Spring Security chain) and role-based authorization with an admin panel
 - REST API split into auth/products/orders/users controllers over service and repository layers, DTOs at the API boundary
 - React 18 frontend with cart, product details, checkout with delivery address and order history; Dockerfiles for both sides
+- **Stack:** Java, Spring Boot, Spring Data JPA, Spring Security, Hibernate, JWT, Maven, Lombok, MySQL, REST API, React, Vite, Axios, Docker
 
 **Digital Diary** - memory journal with geolocation and voice notes. [repo](https://github.com/mumbleCoderr/DIGITAL_DIARY) · [video](https://youtu.be/_k5QQEMhMmI)
 - memories made of a photo, voice recording, description, mood rating, city and date, stored locally in Room
 - custom audio recorder, last-known-location lookup with reverse geocoding to a city name, Google sign-in via Firebase Auth
+- **Stack:** Kotlin, Jetpack Compose, Material 3, MVVM, Room, Coroutines, Flow, Navigation Compose, Coil, Firebase Auth, Play Services Location
 
 **Film Library** - movie and series catalog, my first Kotlin app. [repo](https://github.com/mumbleCoderr/FILM_LIBRARY) · [video](https://youtu.be/CQT7N4gSDBg)
 - sealed class domain model separating a movie (runtime) from a series (episode count)
 - persistence through object serialization, filtering and sorting by title, genre and watched status, cover images handled as byte arrays
+- **Stack:** Kotlin, Jetpack Compose, Material 3, Navigation Compose, Coil, Gradle
 
 ... and a few more
 
